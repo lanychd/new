@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>学生信息管理系统</title>
+    <link rel="stylesheet" type="text/css" href="./public/css/bootstrap.min.css">
+    <style type="text/css">
+    body {
+        height: 100%;
+        background-color: lightblue;
+    }
+
+    ul li {
+    	list-style: none;
+    }
+
+    .header {
+        margin-bottom: 50px;
+    }
+
+    .operation>div {
+        padding: 15px;
+    }
+
+    .operation.row .text-center button {
+    	outline-style: none;
+    }
+
+    .forms li {
+        display: none;
+    }
+
+    .forms li button {
+        margin-right: 30px;
+    }
+    </style>
+</head>
+
+<body>
+  <div id="login">
+      <h4>Login</h4>
+      <form method="post">
+          <input type="text" required="required" placeholder="用户名" name="u"></input>
+          <input type="password" required="required" placeholder="密码" name="p"></input>
+          <button class="but" type="submit">登录</button>
+        </form>
+        </div>
+    <h1 class="header text-center">学生信息管理系统</h1>
+    <div class="container">
+        <div class="operation row">
+
+                <div class="text-center col-md-3 col-sm-6">
+                    <a href="../student.html"><button>学生登陆</button></a>
+                </div>
+                <div class="text-center col-md-3 col-sm-6">
+                  <a href="../teacher.html">  <button>教师登陆</button></a>
+                </div>
+                <div class="text-center col-md-3 col-sm-6">
+                    <a href="../ad.html"><button>管理员</button></a>
+                </div>
+            </div>
+        </div>
+        <script src="./public/js/jquery-3.0.0.min.js"></script>
+        <script src="./public/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+        $(function() {
+
+        	var btns = $(".operation button");
+        	var lis = $(".forms li");
+            btns.addClass("btn btn-primary btn-lg");
+
+            for (var i = 0; i < btns.length; i++){
+            	btns.eq(i).click(i, function(event){
+            		lis.eq(event.data).addClass("show").siblings().removeClass("show");
+            	});
+            }
+
+        });
+        </script>
+    </body>
+
+    </html>
